@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sibo.Examen.Site", "Sibo.Examen.Site\Sibo.Examen.Site.csproj", "{DA311B22-ED39-4A9C-B573-E1F6D8F07BDB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{95633336-169A-4447-B57C-5A5192BA5051} = {95633336-169A-4447-B57C-5A5192BA5051}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sibo.Examen.BLL", "Sibo.Examen.BLL\Sibo.Examen.BLL.csproj", "{ADCE3944-7160-4132-B940-868BB44DAB4B}"
 EndProject
@@ -36,5 +39,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3B88D3A-8161-49DE-8C84-FCE4C76B69D0}
 	EndGlobalSection
 EndGlobal

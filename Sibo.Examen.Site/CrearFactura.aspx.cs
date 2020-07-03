@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Sibo.Examen.DAL.Model;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +11,63 @@ namespace Sibo.Examen.Site
 {
     public partial class CrearFactura : System.Web.UI.Page
     {
+        wsFacturacion.ServiceSoapClient ws = new wsFacturacion.ServiceSoapClient();
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnCrearCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {                
+              var xxxx =  ws.Post(txtCedula.Text, txtNombre.Text, txtApellido.Text);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        
+        }
+
+        protected void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //wsFacturacion.ServiceSoapClient ws = new wsFacturacion.ServiceSoapClient();
+                bool existeCliente = false;
+                DataTable dtClientes = ws.Get();
+                DataRow[] dr = dtClientes.Select(string.Concat("Identification=", txtCedula.Text));
+                txtNombre.ReadOnly = false;
+                txtApellido.ReadOnly = false;
+                foreach (DataRow row in dr)
+                {
+                    txtNombre.Text = row.Field<string>("Name");
+                    txtApellido.Text = row.Field<string>("LastName");
+                    existeCliente = true;
+                    //txtNombre.ReadOnly = true;
+                    //txtApellido.ReadOnly = true;
+                    //btnCrearCliente.Visible = false;
+                }
+
+                if(existeCliente)
+                {
+                    txtNombre.ReadOnly = true;
+                    txtApellido.ReadOnly = true;
+                    btnCrearCliente.Visible = false;
+                }
+                else
+                {
+                    txtNombre.ReadOnly = false;
+                    txtApellido.ReadOnly = false;
+                    btnCrearCliente.Visible = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+         
         }
     }
 }

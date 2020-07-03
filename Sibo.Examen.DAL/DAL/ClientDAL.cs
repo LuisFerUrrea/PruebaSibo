@@ -21,7 +21,7 @@ namespace Sibo.Examen.DAL
                 lClients = dbCtx.Client.ToList();
             }
             return lClients.AsEnumerable();
-        }
+        }    
 
         public Client Post(Client client)
         {
