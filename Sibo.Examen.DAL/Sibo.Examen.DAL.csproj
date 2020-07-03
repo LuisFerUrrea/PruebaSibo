@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="DAL\AdviserDAL.cs" />
     <Compile Include="DAL\ClientDAL.cs" />
+    <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="Model\Adviser.cs">
       <DependentUpon>ModelSiboSuperMarket.tt</DependentUpon>
     </Compile>

@@ -5,12 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="css/site.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     <title>Sibo SuperMarket</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
        
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body>       
     <form id="form1" runat="server">
     <div class="Header">
         <div class="Logo">
